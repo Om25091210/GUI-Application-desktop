@@ -6,7 +6,7 @@ root=Tk()
 root.title("QR Code generator")
 root.geometry("600x150")
 root.resizable(0,0)
-path=os.path.dirname(os.path.realpath('qrcode'))
+path=os.path.dirname(os.path.realpath('QR Code '))
 
 cn=Canvas(root,bg="black",width=600,height=150)
 cn.place(x=0,y=0)
@@ -14,15 +14,15 @@ cn.place(x=0,y=0)
 lb1=Label(root,text="Enter  Link :",width=20,bg="black",fg="yellow")
 lb1.place(x=10,y=10)
 lb1.config(font=("Corbel",18))
-
 lb2=Label(root,
 text="( EX :-- www.python.org.  Please Enter a valid link )",
 bg="black",fg="yellow")
 lb2.place(x=240,y=45)
+
 def fetch():
     s=entry.get()
-    url=pyqrcode.create(s)
-    url.png('{}\\myqr5.png'.format(path),scale=6)
+    qr=pyqrcode.create(s)
+    qr.png('{}\\myqr5.png'.format(path),scale=6)
     root.destroy()
     
     wn=Tk()
